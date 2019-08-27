@@ -1,0 +1,42 @@
+
+<div class="container">
+    <div class="col-md-3" >
+      <h1>Search Here</h1>
+      <input  class="form-control" #f (keyup)="search(f.value)" type="text" placeholder="Enter ID"><br/>
+    </div>
+
+    <div class="col-md-9">
+        <div *ngIf="loading" class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+              <span class="sr-only">45% Complete</span>
+            </div>
+          </div>
+    <br/>
+    <br/>
+    <div class="col-md-9">
+
+       <div class="row">
+
+         <table class="table" >
+           <thead>
+             <th>Id</th>
+             <th>Title</th>
+             <th>Status</th>
+
+          </thead>
+    <tbody>
+      <tr *ngFor="let item of arr" >
+        <td>{{item.Id}}</td>
+
+        <td><a href="taskdesc.html">{{item.Title}}</a></td>
+        <td>{{item.Status}}</td>
+        <td><button class="btn btn-info" (click)="onTaskDelete(item)" >Delete</button>
+        <button class="btn btn-info" (click)="onTaskEdit(item)"  >Edit</button>
+        <button class="btn btn-info" (click)="onTaskEdit(item)"  >EditReactive</button>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+</div>
+</div>
+</div>

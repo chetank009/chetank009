@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Edit Task</h1>
+
+    <form [formGroup]="signup" (ngSubmit)="onEditTask()" >
+        <div class="form-group">
+            <Label>Task Id</Label>
+            <input  formControlName="id"  type ="text" class="form-control" placeholder="Enter Id">
+
+          </div>
+      <div class="form-group">
+        <Label>Task Title</Label>
+        <input  formControlName="title"  type ="text" class="form-control" placeholder="Enter Title">
+
+      </div>
+      <div class="form-group">
+        <Label>Status</Label>
+        <input formControlName="status" type="text" class="form-control" placeholder="Enter Status">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update Task</button>
+      </div>
+    </form>
+  </div>
+
